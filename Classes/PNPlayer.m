@@ -110,17 +110,6 @@ static PNPlayer *currentPlayer = nil;
             default:
                 break;
         }
-    } else if ([keyPath isEqualToString:@"timeControlStatus"]) {
-        AVPlayerTimeControlStatus status = [change[NSKeyValueChangeNewKey] integerValue];
-        if (status == AVPlayerTimeControlStatusPaused && self.status != PNPlayerStatusCompleted) {
-            self.status = PNPlayerStatusPaused;
-        }
-        if (status == AVPlayerTimeControlStatusPlaying) {
-            self.status = PNPlayerStatusPlaying;
-        }
-        if (status == AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate) {
-            self.status = PNPlayerStatusBuffering;
-        }
     } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {  //监听播放器的下载进度
         NSInteger timeInterval = [self loadedTime];
         if ([self.delegate respondsToSelector:@selector(player:loadedTimeChanged:)]) {
@@ -128,13 +117,33 @@ static PNPlayer *currentPlayer = nil;
         }
     } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) { //监听播放器在缓冲数据的状态
         self.status = PNPlayerStatusBuffering;
-    } if ([keyPath isEqualToString:@"rate"]){
-        //当rate==0时为暂停,rate==1时为播放,当rate等于负数时为回放
-//        if ([change[NSKeyValueChangeNewKey] integerValue] == 0) {
-//            self.status = PNPlayerStatusPaused;
-//        } else {
-//            self.status = PNPlayerStatusPlaying;
-//        }
+    }
+    
+    
+    if (@available(iOS 10.0, *)) {
+        if ([keyPath isEqualToString:@"timeControlStatus"]) {
+            AVPlayerTimeControlStatus status = [change[NSKeyValueChangeNewKey] integerValue];
+            
+            if (status == AVPlayerTimeControlStatusPaused && self.status != PNPlayerStatusCompleted) {
+                self.status = PNPlayerStatusPaused;
+            }
+            if (status == AVPlayerTimeControlStatusPlaying) {
+                self.status = PNPlayerStatusPlaying;
+            }
+            if (status == AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate) {
+                self.status = PNPlayerStatusBuffering;
+            }
+        }
+    } else {
+        if ([keyPath isEqualToString:@"rate"]){
+            NSInteger rate = [change[NSKeyValueChangeNewKey] integerValue];
+            //当rate==0时为暂停,rate==1时为播放,当rate等于负数时为回放
+            if (rate == 0) {
+                self.status = PNPlayerStatusPaused;
+            } else {
+                self.status = PNPlayerStatusPlaying;
+            }
+        }
     }
 }
 

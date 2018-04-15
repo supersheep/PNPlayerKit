@@ -11,14 +11,13 @@
 #import "UIControllerAnimator.h"
 #import "PNPlayerView.h"
 #import "PNVideoPlayViewController.h"
-#import <PLPlayerKit/PLPlayerKit.h>
 #import <Masonry/Masonry.h>
 
 @interface ViewController () <PNPlayerViewDelegate>
 @property (nonatomic, strong) AVURLAsset *asset;
 @property (nonatomic, strong) AVPlayer *player1;
 @property (nonatomic, strong) AVPlayer *player2;
-@property (nonatomic, strong) PLPlayer *qnPlayer;
+//@property (nonatomic, strong) PLPlayer *qnPlayer;
 
 @property (nonatomic, strong) CALayer *player2Layer;
 
@@ -159,22 +158,22 @@
 }
 
 - (void)qiniuInit{
-    PLPlayerOption *option = [PLPlayerOption defaultOption];
-    
-    // 更改需要修改的 option 属性键所对应的值
-    [option setOptionValue:@15 forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets];
-    [option setOptionValue:@2000 forKey:PLPlayerOptionKeyMaxL1BufferDuration];
-    [option setOptionValue:@1000 forKey:PLPlayerOptionKeyMaxL2BufferDuration];
-    [option setOptionValue:@(NO) forKey:PLPlayerOptionKeyVideoToolbox];
-    [option setOptionValue:@(kPLLogInfo) forKey:PLPlayerOptionKeyLogLevel];
-    PLPlayer *player = [PLPlayer playerWithURL:[NSURL URLWithString:@"http://video.piaoniu.com/review/15233560872751648.mp4"] option:option];
-    
-    player.playerView.frame = CGRectMake(0, 0, 160, 90);
-    _qnPlayer = player;
-    [self.view addSubview:player.playerView];
-
-    
-    [_qnPlayer play];
+//    PLPlayerOption *option = [PLPlayerOption defaultOption];
+//    
+//    // 更改需要修改的 option 属性键所对应的值
+//    [option setOptionValue:@15 forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets];
+//    [option setOptionValue:@2000 forKey:PLPlayerOptionKeyMaxL1BufferDuration];
+//    [option setOptionValue:@1000 forKey:PLPlayerOptionKeyMaxL2BufferDuration];
+//    [option setOptionValue:@(NO) forKey:PLPlayerOptionKeyVideoToolbox];
+//    [option setOptionValue:@(kPLLogInfo) forKey:PLPlayerOptionKeyLogLevel];
+//    PLPlayer *player = [PLPlayer playerWithURL:[NSURL URLWithString:@"http://video.piaoniu.com/review/15233560872751648.mp4"] option:option];
+//    
+//    player.playerView.frame = CGRectMake(0, 0, 160, 90);
+//    _qnPlayer = player;
+//    [self.view addSubview:player.playerView];
+//
+//    
+//    [_qnPlayer play];
     // 设定代理 (optional)
     
     

@@ -1,35 +1,33 @@
 PODS:
   - Masonry (1.1.0)
-  - PLPlayerKit (3.3.0):
-    - PLPlayerKit/universal (= 3.3.0)
-  - PLPlayerKit/universal (3.3.0)
   - Reveal-SDK (13)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - UIColor+Hex (1.0.1):
-    - UIColor+Hex/NSColor (= 1.0.1)
-    - UIColor+Hex/UIColor (= 1.0.1)
-  - UIColor+Hex/UIColor (1.0.1)
+  - "UIColor+Hex (1.0.1)":
+    - "UIColor+Hex/NSColor (= 1.0.1)"
+    - "UIColor+Hex/UIColor (= 1.0.1)"
+  - "UIColor+Hex/UIColor (1.0.1)"
 
 DEPENDENCIES:
   - Masonry (~> 1.1.0)
-  - PLPlayerKit (from `https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec`)
   - Reveal-SDK
   - SDWebImage (= 3.8.2)
-  - UIColor+Hex (= 1.0.1)
+  - "UIColor+Hex (= 1.0.1)"
 
-EXTERNAL SOURCES:
-  PLPlayerKit:
-    :podspec: https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Masonry
+    - Reveal-SDK
+    - SDWebImage
+    - "UIColor+Hex"
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PLPlayerKit: 7a1f9d6fde3ee49b0cd0ab13628a13a4714e9bfa
   Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  UIColor+Hex: 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
+  "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
 
-PODFILE CHECKSUM: 170e02c8b1e55337a8e3a731e406c5b6403974bf
+PODFILE CHECKSUM: 34a6ac0e38262cf3dce4cabb7fd3a1226d88dd89
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

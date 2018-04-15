@@ -170,8 +170,6 @@
 
 #pragma mark - controls
 - (void)showControl {
-    BOOL largerThan5s = [UIScreen mainScreen].bounds.size.width > 320;
-    CGFloat topOffset = largerThan5s ? 0 : -20;
     
     [UIView animateWithDuration:0.6
                           delay:0.0
@@ -182,7 +180,7 @@
                          [self.head mas_remakeConstraints:^(MASConstraintMaker *make) {
                              make.left.right.equalTo(self);
                              make.height.mas_equalTo(44);
-                             make.top.equalTo(self).offset(topOffset);
+                             make.top.equalTo(self).offset(0);
                          }];
                          
                          [self.control mas_remakeConstraints:^(MASConstraintMaker *make) {

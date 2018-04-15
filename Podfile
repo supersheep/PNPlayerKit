@@ -8,7 +8,6 @@ target 'PNPlayerKit' do
 	pod 'UIColor+Hex', '1.0.1'
   pod 'Masonry', '~> 1.1.0'
   pod 'Reveal-SDK', :configurations => ['Debug']
-  pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
 
   # Pods for PNPlayerKit
 end
