@@ -7,6 +7,7 @@
 //
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#import "PNPlayerOrientation.h"
 
 typedef enum : NSUInteger {
     PNPlayerStatusUnknown = 1,
@@ -28,7 +29,7 @@ typedef enum : NSUInteger {
 @interface PNPlayer : UIView
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, assign) PNPlayerStatus status;
-
+@property (nonatomic, assign) PNPlayerOrientation orientation;
 
 @property (nonatomic, readonly) NSInteger currentTime;
 @property (nonatomic, readonly) NSInteger loadedTime;

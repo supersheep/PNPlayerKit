@@ -15,6 +15,9 @@
 		22066EEA207F658A00556332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EE9207F658A00556332 /* main.m */; };
 		22066EF2207F659A00556332 /* VC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EF1207F659A00556332 /* VC2ViewController.m */; };
 		22066EF5207F66D500556332 /* UIControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EF4207F66D500556332 /* UIControllerAnimator.m */; };
+		228808D82082EB18005DAF30 /* PNVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228808D72082EB18005DAF30 /* PNVideoPlayViewController.m */; };
+		228808DB20831CD3005DAF30 /* PNVideoHeadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */; };
+		228808DD20831F6E005DAF30 /* PNPlayerOrientation.h in Sources */ = {isa = PBXBuildFile; fileRef = 228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */; };
 		22953DDE20819D070014EB49 /* PNPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DDD20819D070014EB49 /* PNPlayer.m */; };
 		22953DE120819D720014EB49 /* PNPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE020819D720014EB49 /* PNPlayerView.m */; };
 		22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE92081B8B00014EB49 /* PNAssetManager.m */; };
@@ -40,6 +43,11 @@
 		22066EF1207F659A00556332 /* VC2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2ViewController.m; sourceTree = "<group>"; };
 		22066EF3207F66D500556332 /* UIControllerAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIControllerAnimator.h; sourceTree = "<group>"; };
 		22066EF4207F66D500556332 /* UIControllerAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIControllerAnimator.m; sourceTree = "<group>"; };
+		228808D62082EB18005DAF30 /* PNVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoPlayViewController.h; sourceTree = "<group>"; };
+		228808D72082EB18005DAF30 /* PNVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoPlayViewController.m; sourceTree = "<group>"; };
+		228808D920831CD3005DAF30 /* PNVideoHeadControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoHeadControl.h; sourceTree = "<group>"; };
+		228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoHeadControl.m; sourceTree = "<group>"; };
+		228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayerOrientation.h; sourceTree = "<group>"; };
 		22953DDC20819D070014EB49 /* PNPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayer.h; sourceTree = "<group>"; };
 		22953DDD20819D070014EB49 /* PNPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNPlayer.m; sourceTree = "<group>"; };
 		22953DDF20819D720014EB49 /* PNPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayerView.h; sourceTree = "<group>"; };
@@ -114,6 +122,9 @@
 				22953DE020819D720014EB49 /* PNPlayerView.m */,
 				22953DE82081B8B00014EB49 /* PNAssetManager.h */,
 				22953DE92081B8B00014EB49 /* PNAssetManager.m */,
+				228808D62082EB18005DAF30 /* PNVideoPlayViewController.h */,
+				228808D72082EB18005DAF30 /* PNVideoPlayViewController.m */,
+				228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -142,6 +153,8 @@
 				22953DF520822CFD0014EB49 /* PNVideoControlProtocol.h */,
 				22953DF620823B490014EB49 /* PNVideoControlTiny.h */,
 				22953DF720823B490014EB49 /* PNVideoControlTiny.m */,
+				228808D920831CD3005DAF30 /* PNVideoHeadControl.h */,
+				228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -288,9 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228808DD20831F6E005DAF30 /* PNPlayerOrientation.h in Sources */,
 				22066EF2207F659A00556332 /* VC2ViewController.m in Sources */,
 				22066EDF207F658A00556332 /* ViewController.m in Sources */,
 				22953DF0208225D60014EB49 /* PNVideoControlFull.m in Sources */,
+				228808DB20831CD3005DAF30 /* PNVideoHeadControl.m in Sources */,
+				228808D82082EB18005DAF30 /* PNVideoPlayViewController.m in Sources */,
 				22066EEA207F658A00556332 /* main.m in Sources */,
 				22066EDC207F658A00556332 /* AppDelegate.m in Sources */,
 				22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */,

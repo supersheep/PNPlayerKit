@@ -21,6 +21,7 @@ static PNPlayer *currentPlayer = nil;
 - (instancetype)init{
     if (self = [super init]) {
         self.player = [AVPlayer new];
+        self.orientation = PNPlayerOrientationPortrait;
         self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
         self.playerLayer.backgroundColor = [UIColor blackColor].CGColor;
         self.playerLayer.player = self.player;

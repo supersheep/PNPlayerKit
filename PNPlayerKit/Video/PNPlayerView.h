@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "PNPlayer.h"
+#import "PNPlayerOrientation.h"
 
-typedef NS_ENUM(NSUInteger, PNPlayerControlType) {
+typedef enum : NSUInteger {
     PNPlayerControlTypeNone,
     PNPlayerControlTypeTiny,
     PNPlayerControlTypeSimple,
     PNPlayerControlTypeFull
-};
+} PNPlayerControlType;
 
 @class PNPlayerView;
 @protocol PNPlayerViewDelegate <NSObject>
+- (void)playerViewCloseButtonTapped:(PNPlayerView *)player;
 - (void)playerViewPlayButtonTapped:(PNPlayerView *)player;
+- (void)playerViewTapped:(PNPlayerView *)player;
 - (void)playerView:(PNPlayerView *)player loadedTimeChanged:(NSInteger)loadedTime;
 - (void)playerView:(PNPlayerView *)player currentTimeChanged:(NSInteger)currentTime;
 - (void)playerView:(PNPlayerView *)player statusDidChange:(PNPlayerStatus)status;
@@ -38,5 +41,8 @@ typedef NS_ENUM(NSUInteger, PNPlayerControlType) {
 - (void)pause;
 - (void)seekTo:(CMTime)time;
 - (void)mute:(BOOL)shouldMute;
-- (CGRect)fullScreenSize;
+
+- (void)toggleControl;
+- (void)showControl;
+- (void)hideControl;
 @end

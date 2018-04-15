@@ -17,7 +17,6 @@
 @property (nonatomic, strong) UIButton *btnPlay;
 @property (nonatomic, strong) UIButton *btnTransform;
 @property (nonatomic, assign) BOOL isPlaying;
-@property (nonatomic, assign) UIDeviceOrientation orientation;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @end
 
@@ -41,22 +40,19 @@
 }
 
 - (void)transformButtonTapped{
-    if(self.delegate){
-        if(self.orientation == UIDeviceOrientationPortrait){
-            self.orientation = UIDeviceOrientationLandscapeLeft;
-        }else{
-            self.orientation = UIDeviceOrientationPortrait;
-        }
-        [self.delegate videoControlTransformOrientation:self.orientation];
+    if([self.delegate respondsToSelector:@selector(videoControlTapTransform)]){
+        [self.delegate videoControlTapTransform];
     }
+}
+
+- (void)updateOrientation:(PNPlayerOrientation)orientation{
+//    self.btnTransform
 }
 
 - (void)load{
     self.isPlaying = NO;
     
     self.backgroundColor = [UIColor clearColor];
-    self.orientation = UIDeviceOrientationPortrait;
-    
     
     //    //初始化CAGradientlayer对象，使它的大小为UIView的大小
     self.gradientLayer = [CAGradientLayer layer];
@@ -146,7 +142,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    self.gradientLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
+    self.gradientLayer.frame = CGRectMake(0, 0, self.bounds.size.width, 44);
 }
 
 -(void)seekToProgress:(UISlider *)sender {

@@ -11,6 +11,8 @@
 
 @protocol PNVideoControlProtocol <NSObject>
 @property (nonatomic, weak) id<PNVideoControlDelegate> delegate;
+@optional
+- (void)updateOrientation:(PNPlayerOrientation)orientation;
 - (void)setPlayingState:(BOOL)isPlaying;
 - (void)setTotalTime:(NSInteger)totalTime;
 - (void)setCurrentTime:(NSInteger)currentTime;

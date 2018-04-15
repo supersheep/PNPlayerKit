@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PNPlayerOrientation.h"
 
 @protocol PNVideoControlDelegate <NSObject>
 -(void)videoControlTapPlay;
 -(void)videoControlTapPause;
+-(void)videoControlTapTransform;
 -(void)videoControlMoveProgress:(CGFloat)progress;
--(void)videoControlTransformOrientation:(UIDeviceOrientation)orientation;
+-(void)videoControlTransformOrientation:(PNPlayerOrientation)orientation;
 @end
