@@ -92,6 +92,60 @@
     [self player:self.player statusDidChange:PNPlayerStatusPaused];
 }
 
+
+
+- (void)initControl:(PNPlayerControlType)type{
+    _isShowControl = YES;
+    [self.control removeFromSuperview];
+    [self.head removeFromSuperview];
+    if (type == PNPlayerControlTypeNone) {
+        // do nothing
+    } else if (type == PNPlayerControlTypeTiny) {
+        self.control = [PNVideoControlTiny new];
+        [self addSubview:self.control];
+        [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.height.mas_equalTo(54);
+            if (@available(iOS 11, *)) {
+                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
+            } else {
+                make.bottom.equalTo(self);
+            }
+        }];
+    } else if (type == PNPlayerControlTypeSimple) {
+        
+    } else if (type == PNPlayerControlTypeFull) {
+        self.control = [PNVideoControlFull new];
+        [self addSubview:self.control];
+        [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.height.mas_equalTo(44);
+            if (@available(iOS 11, *)) {
+                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
+            } else {
+                make.bottom.equalTo(self);
+            }
+        }];
+        
+        self.head = [PNVideoHeadControl new];
+        self.head.delegate = self;
+        [self addSubview:self.head];
+        [self.head mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.mas_equalTo(44);
+            make.left.right.top.equalTo(self);
+        }];
+    }
+    
+    self.control.delegate = self;
+}
+
+
+- (void)setVideo:(NSString *)video poster:(NSString *)poster {
+    [self.player replaceURL:[NSURL URLWithString:video]];
+    [self.imgPoster sd_setImageWithURL:[NSURL URLWithString:poster]];
+}
+
+#pragma mark - event handlers
 - (void)playerTapped{
     if (self.controlType == PNPlayerControlTypeFull) {
         [self toggleControl];
@@ -102,13 +156,20 @@
     }
 }
 
-- (void)videoHeadControlCloseTapped{
-    [self quitFullScreen];
-    if ([self.delegate respondsToSelector:@selector(playerViewCloseButtonTapped:)]) {
-        [self.delegate playerViewCloseButtonTapped:self];
+- (void)playButtonTapped{
+    if (self.player.status == PNPlayerStatusCompleted) {
+        [self.player replay];
+        [self.control reset];
+    } else {
+        [self.player play];
+    }
+    if ([self.delegate respondsToSelector:@selector(playerViewPlayButtonTapped:)]) {
+        [self.delegate playerViewPlayButtonTapped:self];
     }
 }
 
+
+#pragma mark - controls
 - (void)showControl {
     BOOL largerThan5s = [UIScreen mainScreen].bounds.size.width > 320;
     CGFloat topOffset = largerThan5s ? 0 : -20;
@@ -169,71 +230,10 @@
     } else {
         [self hideControl];
     }
-    
 }
 
-- (void)initControl:(PNPlayerControlType)type{
-    _isShowControl = YES;
-    [self.control removeFromSuperview];
-    [self.head removeFromSuperview];
-    if (type == PNPlayerControlTypeNone) {
-        // do nothing
-    } else if (type == PNPlayerControlTypeTiny) {
-        self.control = [PNVideoControlTiny new];
-        [self addSubview:self.control];
-        [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.height.mas_equalTo(54);
-            if (@available(iOS 11, *)) {
-                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
-            } else {
-                make.bottom.equalTo(self);
-            }
-        }];
-    } else if (type == PNPlayerControlTypeSimple) {
-        
-    } else if (type == PNPlayerControlTypeFull) {
-        self.control = [PNVideoControlFull new];
-        [self addSubview:self.control];
-        [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.height.mas_equalTo(44);
-            if (@available(iOS 11, *)) {
-                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
-            } else {
-                make.bottom.equalTo(self);
-            }
-        }];
-        
-        self.head = [PNVideoHeadControl new];
-        self.head.delegate = self;
-        [self addSubview:self.head];
-        [self.head mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.width.mas_equalTo(44);
-            make.left.right.top.equalTo(self);
-        }];
-    }
-    
-    self.control.delegate = self;
-}
 
-- (void)playButtonTapped{
-    if (self.player.status == PNPlayerStatusCompleted) {
-        [self.player replay];
-        [self.control reset];
-    } else {
-        [self.player play];
-    }
-    if ([self.delegate respondsToSelector:@selector(playerViewPlayButtonTapped:)]) {
-        [self.delegate playerViewPlayButtonTapped:self];
-    }
-}
-
-- (void)setVideo:(NSString *)video poster:(NSString *)poster {
-    [self.player replaceURL:[NSURL URLWithString:video]];
-    [self.imgPoster sd_setImageWithURL:[NSURL URLWithString:poster]];
-}
-
+#pragma mark - getters
 - (NSInteger)currentTime {
     return self.player.currentTime;
 }
@@ -246,6 +246,7 @@
     return self.player.status == PNPlayerStatusPlaying;
 }
 
+#pragma mark - public funcs
 - (void)play {
     [self.player play];
 }
@@ -259,6 +260,11 @@
     [self.player play];
 }
 
+- (void)mute:(BOOL)shouldMute{
+    [self.player setMuted:YES];
+}
+
+#pragma mark - private funcs
 - (void)startLoadingAnimation {
     if (self.loading) {
         return;
@@ -282,45 +288,44 @@
                      }];
 }
 
-- (void)mute:(BOOL)shouldMute{
-    [self.player setMuted:YES];
-}
-
 -(void)endLoadingAnimation {
     self.loading = NO;
     self.imgLoading.hidden = YES;
     [self.imgLoading.layer removeAllAnimations];
 }
 
-//- (CGRect)fullScreenSize{
-//    CGFloat videoWidth = self.player.videoWidth;
-//    CGFloat videoHeight = self.player.videoHeight;
-//    
-//    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-//    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-//
-//    CGFloat width = 0;
-//    CGFloat height = 0;
-//    CGFloat left = 0;
-//    CGFloat top = 0;
-//    
-//    if (videoWidth > videoHeight) {
-//        width = screenWidth;
-//        height = width * 9.0f / 16.0f;
-//        left = 0;
-//        top = (screenHeight - height) / 2;
-//    } else {
-//        height = screenWidth;
-//        width = height * 9.0f / 16.0f;
-//        top = 0;
-//        left = screenWidth / 2;
-//    }
-//    
-//    return CGRectMake(left, top, width, height);
-//}
+
+- (void)fullScreen{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.originFrame = self.frame;
+        self.player.orientation = PNPlayerOrientationLandscape;
+        [self changeOrientation:PNPlayerOrientationLandscape];
+        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    }];
+}
+
+- (void)quitFullScreen{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.player.orientation = PNPlayerOrientationPortrait;
+        [self changeOrientation:PNPlayerOrientationPortrait];
+        self.frame = self.originFrame;
+    }];
+}
 
 
+- (void)changeOrientation:(PNPlayerOrientation)orientation{
+    CGAffineTransform trans;
+    trans = CGAffineTransformMakeTranslation(0, 0);
+    
+    if (orientation == PNPlayerOrientationLandscape) {
+        trans = CGAffineTransformRotate(trans, M_PI / 2);
+    } else {
+        trans = CGAffineTransformRotate(trans, 0);
+    }
+    self.transform = trans;
+}
 
+#pragma mark - player delegate
 - (void)player:(PNPlayer *)player loadedTimeChanged:(NSInteger)loadedTime{
     if ([self.delegate respondsToSelector:@selector(playerView:loadedTimeChanged:)]) {
         [self.delegate playerView:self loadedTimeChanged:loadedTime];
@@ -374,23 +379,7 @@
     }
 }
 
-- (void)fullScreen{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.originFrame = self.frame;
-        self.player.orientation = PNPlayerOrientationLandscape;
-        [self changeOrientation:PNPlayerOrientationLandscape];
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    }];
-}
-
-- (void)quitFullScreen{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.player.orientation = PNPlayerOrientationPortrait;
-        [self changeOrientation:PNPlayerOrientationPortrait];
-        self.frame = self.originFrame;
-    }];
-}
-
+#pragma mark - video control delegate
 - (void)videoControlTapTransform{
     self.player.orientation = self.player.orientation == PNPlayerOrientationPortrait ? PNPlayerOrientationLandscape : PNPlayerOrientationPortrait;
     
@@ -409,23 +398,17 @@
     [self pause];
 }
 
-- (void)changeOrientation:(PNPlayerOrientation)orientation{
-//    CGFloat centerX = self.frame.origin.x + self.frame.size.width / 2;
-//    CGFloat centerY = self.frame.origin.y + self.frame.size.height / 2;
-    CGAffineTransform trans;
-    trans = CGAffineTransformMakeTranslation(0, 0);
-    
-    if (orientation == PNPlayerOrientationLandscape) {
-        trans = CGAffineTransformRotate(trans, M_PI / 2);
-//        trans = CGAffineTransformMakeTranslation(centerY, centerX);
-    } else {
-        trans = CGAffineTransformRotate(trans, 0);
-    }
-    self.transform = trans;
-}
-
 - (void)videoControlMoveProgress:(CGFloat)progress{
     [self.player seekToTime:CMTimeMake(progress * self.player.totalTime, 1)];
     [self.player play];
 }
+
+#pragma mark - head control delegate
+- (void)videoHeadControlCloseTapped{
+    [self quitFullScreen];
+    if ([self.delegate respondsToSelector:@selector(playerViewCloseButtonTapped:)]) {
+        [self.delegate playerViewCloseButtonTapped:self];
+    }
+}
+
 @end
