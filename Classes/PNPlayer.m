@@ -135,7 +135,7 @@ static PNPlayer *currentPlayer = nil;
             }
         }
     } else {
-        if ([keyPath isEqualToString:@"rate"]){
+        if ([keyPath isEqualToString:@"rate"]) {
             NSInteger rate = [change[NSKeyValueChangeNewKey] integerValue];
             //当rate==0时为暂停,rate==1时为播放,当rate等于负数时为回放
             if (rate == 0) {

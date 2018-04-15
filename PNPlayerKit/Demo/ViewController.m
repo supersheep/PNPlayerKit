@@ -73,7 +73,7 @@
     NSString *video = @"https://video.piaoniu.com/review/15233560872751648.mp4";
     NSString *poster = @"http://img.piaoniu.com/video/a250c96b065f7e9ed8eac3bd82695f7b0d9dba0c.jpg";
 
-    PNPlayerView *player = [[PNPlayerView alloc] initWithControlType:PNPlayerControlTypeTiny];
+    PNPlayerView *player = [[PNPlayerView alloc] initWithControlType:PNPlayerControlTypeSimple];
     player.delegate = self;
     [player setVideo:video poster:poster];
     player.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width / 16.0f * 9.0f);

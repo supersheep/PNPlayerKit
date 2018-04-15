@@ -9,7 +9,6 @@
 #import "PNVideoControlTiny.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+Hex.h"
-//#import <UIColor+Hex/UIColor+Hex.h>
 
 @interface PNVideoControlTiny()
 @property (nonatomic, strong, nonnull) UIProgressView *progressView;
@@ -21,7 +20,6 @@
 @end
 
 @implementation PNVideoControlTiny
-
 - (void)initViews{
     self.gradientView = [UIView new];
     self.gradientView.clipsToBounds = YES;
@@ -108,5 +106,4 @@
     int dSeconds = floor(seconds % 3600 % 60);
     return [NSString stringWithFormat:@"%02i:%02i", dMinutes, dSeconds];
 }
-
 @end

@@ -18,6 +18,7 @@
 		228808D82082EB18005DAF30 /* PNVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228808D72082EB18005DAF30 /* PNVideoPlayViewController.m */; };
 		228808DB20831CD3005DAF30 /* PNVideoHeadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */; };
 		228808DD20831F6E005DAF30 /* PNPlayerOrientation.h in Sources */ = {isa = PBXBuildFile; fileRef = 228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */; };
+		2288090820838CE2005DAF30 /* PNVideoControlSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288090720838CE2005DAF30 /* PNVideoControlSimple.m */; };
 		22953DDE20819D070014EB49 /* PNPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DDD20819D070014EB49 /* PNPlayer.m */; };
 		22953DE120819D720014EB49 /* PNPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE020819D720014EB49 /* PNPlayerView.m */; };
 		22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE92081B8B00014EB49 /* PNAssetManager.m */; };
@@ -48,6 +49,8 @@
 		228808D920831CD3005DAF30 /* PNVideoHeadControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoHeadControl.h; sourceTree = "<group>"; };
 		228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoHeadControl.m; sourceTree = "<group>"; };
 		228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayerOrientation.h; sourceTree = "<group>"; };
+		2288090620838CE2005DAF30 /* PNVideoControlSimple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoControlSimple.h; sourceTree = "<group>"; };
+		2288090720838CE2005DAF30 /* PNVideoControlSimple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoControlSimple.m; sourceTree = "<group>"; };
 		22953DDC20819D070014EB49 /* PNPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayer.h; sourceTree = "<group>"; };
 		22953DDD20819D070014EB49 /* PNPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNPlayer.m; sourceTree = "<group>"; };
 		22953DDF20819D720014EB49 /* PNPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayerView.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				22953DF720823B490014EB49 /* PNVideoControlTiny.m */,
 				228808D920831CD3005DAF30 /* PNVideoHeadControl.h */,
 				228808DA20831CD3005DAF30 /* PNVideoHeadControl.m */,
+				2288090620838CE2005DAF30 /* PNVideoControlSimple.h */,
+				2288090720838CE2005DAF30 /* PNVideoControlSimple.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				228808DB20831CD3005DAF30 /* PNVideoHeadControl.m in Sources */,
 				228808D82082EB18005DAF30 /* PNVideoPlayViewController.m in Sources */,
 				22066EEA207F658A00556332 /* main.m in Sources */,
+				2288090820838CE2005DAF30 /* PNVideoControlSimple.m in Sources */,
 				22066EDC207F658A00556332 /* AppDelegate.m in Sources */,
 				22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */,
 				22953DE120819D720014EB49 /* PNPlayerView.m in Sources */,

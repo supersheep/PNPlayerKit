@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "PNVideoControlTiny.h"
 #import "PNVideoControlFull.h"
+#import "PNVideoControlSimple.h"
 #import "PNVideoHeadControl.h"
 
 @interface PNPlayerView() <PNPlayerDelegate, PNVideoControlDelegate, PNVideoHeadControlDelegate>
@@ -105,32 +106,30 @@
         [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
             make.height.mas_equalTo(54);
-            if (@available(iOS 11, *)) {
-                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
-            } else {
-                make.bottom.equalTo(self);
-            }
+            make.bottom.equalTo(self);
         }];
     } else if (type == PNPlayerControlTypeSimple) {
-        
+        self.control = [PNVideoControlSimple new];
+        [self addSubview:self.control];
+        [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.height.mas_equalTo(29);
+            make.bottom.equalTo(self);
+        }];
     } else if (type == PNPlayerControlTypeFull) {
         self.control = [PNVideoControlFull new];
         [self addSubview:self.control];
         [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
             make.height.mas_equalTo(44);
-            if (@available(iOS 11, *)) {
-                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom);
-            } else {
-                make.bottom.equalTo(self);
-            }
+            make.bottom.equalTo(self);
         }];
         
         self.head = [PNVideoHeadControl new];
         self.head.delegate = self;
         [self addSubview:self.head];
         [self.head mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.width.mas_equalTo(44);
+            make.height.mas_equalTo(44);
             make.left.right.top.equalTo(self);
         }];
     }
@@ -170,7 +169,6 @@
 
 #pragma mark - controls
 - (void)showControl {
-    
     [UIView animateWithDuration:0.6
                           delay:0.0
          usingSpringWithDamping:0.9
@@ -293,11 +291,12 @@
 
 
 - (void)fullScreen{
+    self.layer.zPosition = 1;
     [UIView animateWithDuration:0.5 animations:^{
         self.originFrame = self.frame;
         self.player.orientation = PNPlayerOrientationLandscape;
         [self changeOrientation:PNPlayerOrientationLandscape];
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
     }];
 }
 
@@ -312,12 +311,11 @@
 
 - (void)changeOrientation:(PNPlayerOrientation)orientation{
     CGAffineTransform trans;
-    trans = CGAffineTransformMakeTranslation(0, 0);
     
     if (orientation == PNPlayerOrientationLandscape) {
-        trans = CGAffineTransformRotate(trans, M_PI / 2);
+        trans = CGAffineTransformMakeRotation(M_PI / 2);
     } else {
-        trans = CGAffineTransformRotate(trans, 0);
+        trans = CGAffineTransformMakeRotation(0);
     }
     self.transform = trans;
 }
@@ -369,7 +367,9 @@
         [self endLoadingAnimation];
     }
     
-    [self.control setPlayingState:[self playing]];
+    if ([self.control respondsToSelector:@selector(setPlayingState:)]) {
+        [self.control setPlayingState:[self playing]];
+    }
     
     if ([self.delegate respondsToSelector:@selector(playerView:statusDidChange:)]) {
         [self.delegate playerView:self statusDidChange:state];

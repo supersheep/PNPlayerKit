@@ -98,7 +98,7 @@
     self.labCurrentTime.text = @"00:00";
     self.labCurrentTime.textAlignment = NSTextAlignmentCenter;
     self.labCurrentTime.textColor = [UIColor colorWithHex:0xffffff];
-    self.labCurrentTime.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+    self.labCurrentTime.font = [UIFont systemFontOfSize:13];
     [self addSubview:self.labCurrentTime];
     [self.labCurrentTime mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(20);
@@ -111,7 +111,7 @@
     self.labTotalTime.text = @"00:00";
     self.labTotalTime.textAlignment = NSTextAlignmentCenter;
     self.labTotalTime.textColor = [UIColor whiteColor];
-    self.labTotalTime.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+    self.labTotalTime.font = [UIFont systemFontOfSize:13];
     [self addSubview:self.labTotalTime];
     [self.labTotalTime mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(20);
