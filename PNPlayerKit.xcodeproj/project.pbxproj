@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22066EDC207F658A00556332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EDB207F658A00556332 /* AppDelegate.m */; };
+		22066EDF207F658A00556332 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EDE207F658A00556332 /* ViewController.m */; };
+		22066EE2207F658A00556332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22066EE0207F658A00556332 /* Main.storyboard */; };
+		22066EE4207F658A00556332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22066EE3207F658A00556332 /* Assets.xcassets */; };
+		22066EE7207F658A00556332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22066EE5207F658A00556332 /* LaunchScreen.storyboard */; };
+		22066EEA207F658A00556332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EE9207F658A00556332 /* main.m */; };
+		22066EF2207F659A00556332 /* VC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EF1207F659A00556332 /* VC2ViewController.m */; };
+		22066EF5207F66D500556332 /* UIControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22066EF4207F66D500556332 /* UIControllerAnimator.m */; };
+		22953DDE20819D070014EB49 /* PNPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DDD20819D070014EB49 /* PNPlayer.m */; };
+		22953DE120819D720014EB49 /* PNPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE020819D720014EB49 /* PNPlayerView.m */; };
+		22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DE92081B8B00014EB49 /* PNAssetManager.m */; };
+		22953DF0208225D60014EB49 /* PNVideoControlFull.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DEF208225D60014EB49 /* PNVideoControlFull.m */; };
+		22953DF820823B490014EB49 /* PNVideoControlTiny.m in Sources */ = {isa = PBXBuildFile; fileRef = 22953DF720823B490014EB49 /* PNVideoControlTiny.m */; };
+		712E42966E8E3D5147E63224 /* libPods-PNPlayerKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA0D7F58AE3B29005C68F3C /* libPods-PNPlayerKit.a */; };
+		B822DC2D43F6C00098020F69 /* libPods-PNPlayerKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0944F1D2B494B7C20F5D6B27 /* libPods-PNPlayerKit.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0944F1D2B494B7C20F5D6B27 /* libPods-PNPlayerKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PNPlayerKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22066ED7207F658A00556332 /* PNPlayerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PNPlayerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22066EDA207F658A00556332 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22066EDB207F658A00556332 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22066EDD207F658A00556332 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		22066EDE207F658A00556332 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		22066EE1207F658A00556332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22066EE3207F658A00556332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22066EE6207F658A00556332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22066EE8207F658A00556332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22066EE9207F658A00556332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22066EF0207F659A00556332 /* VC2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2ViewController.h; sourceTree = "<group>"; };
+		22066EF1207F659A00556332 /* VC2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2ViewController.m; sourceTree = "<group>"; };
+		22066EF3207F66D500556332 /* UIControllerAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIControllerAnimator.h; sourceTree = "<group>"; };
+		22066EF4207F66D500556332 /* UIControllerAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIControllerAnimator.m; sourceTree = "<group>"; };
+		22953DDC20819D070014EB49 /* PNPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayer.h; sourceTree = "<group>"; };
+		22953DDD20819D070014EB49 /* PNPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNPlayer.m; sourceTree = "<group>"; };
+		22953DDF20819D720014EB49 /* PNPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPlayerView.h; sourceTree = "<group>"; };
+		22953DE020819D720014EB49 /* PNPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNPlayerView.m; sourceTree = "<group>"; };
+		22953DE82081B8B00014EB49 /* PNAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNAssetManager.h; sourceTree = "<group>"; };
+		22953DE92081B8B00014EB49 /* PNAssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNAssetManager.m; sourceTree = "<group>"; };
+		22953DEE208225D60014EB49 /* PNVideoControlFull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoControlFull.h; sourceTree = "<group>"; };
+		22953DEF208225D60014EB49 /* PNVideoControlFull.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoControlFull.m; sourceTree = "<group>"; };
+		22953DF420822C920014EB49 /* PNVideoControlDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoControlDelegate.h; sourceTree = "<group>"; };
+		22953DF520822CFD0014EB49 /* PNVideoControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoControlProtocol.h; sourceTree = "<group>"; };
+		22953DF620823B490014EB49 /* PNVideoControlTiny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNVideoControlTiny.h; sourceTree = "<group>"; };
+		22953DF720823B490014EB49 /* PNVideoControlTiny.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNVideoControlTiny.m; sourceTree = "<group>"; };
+		3CA0D7F58AE3B29005C68F3C /* libPods-PNPlayerKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PNPlayerKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53AF550ACCC4CD41D20258A3 /* Pods-PNPlayerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNPlayerKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit.debug.xcconfig"; sourceTree = "<group>"; };
+		92E481A3E41904B749B20926 /* Pods-PNPlayerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNPlayerKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit.release.xcconfig"; sourceTree = "<group>"; };
+		D97B74AEA75582615B2ECE41 /* Pods-PNPlayerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNPlayerKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit.release.xcconfig"; sourceTree = "<group>"; };
+		FEF159099039D44EE2C7BFA4 /* Pods-PNPlayerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNPlayerKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22066ED4207F658A00556332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B822DC2D43F6C00098020F69 /* libPods-PNPlayerKit.a in Frameworks */,
+				712E42966E8E3D5147E63224 /* libPods-PNPlayerKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22066ECE207F658A00556332 = {
+			isa = PBXGroup;
+			children = (
+				22066ED9207F658A00556332 /* PNPlayerKit */,
+				22066ED8207F658A00556332 /* Products */,
+				4EF699A03D0880404137EF35 /* Pods */,
+				315D0E0EA5B340CFDE8F49B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22066ED8207F658A00556332 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22066ED7207F658A00556332 /* PNPlayerKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22066ED9207F658A00556332 /* PNPlayerKit */ = {
+			isa = PBXGroup;
+			children = (
+				22953DEC2082258E0014EB49 /* Demo */,
+				22953DEB208225860014EB49 /* Video */,
+				22066EE0207F658A00556332 /* Main.storyboard */,
+				22066EE3207F658A00556332 /* Assets.xcassets */,
+				22066EE5207F658A00556332 /* LaunchScreen.storyboard */,
+				22066EE8207F658A00556332 /* Info.plist */,
+				22066EE9207F658A00556332 /* main.m */,
+			);
+			path = PNPlayerKit;
+			sourceTree = "<group>";
+		};
+		22953DEB208225860014EB49 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				22953DED208225B50014EB49 /* Controls */,
+				22953DDC20819D070014EB49 /* PNPlayer.h */,
+				22953DDD20819D070014EB49 /* PNPlayer.m */,
+				22953DDF20819D720014EB49 /* PNPlayerView.h */,
+				22953DE020819D720014EB49 /* PNPlayerView.m */,
+				22953DE82081B8B00014EB49 /* PNAssetManager.h */,
+				22953DE92081B8B00014EB49 /* PNAssetManager.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		22953DEC2082258E0014EB49 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				22066EDA207F658A00556332 /* AppDelegate.h */,
+				22066EDB207F658A00556332 /* AppDelegate.m */,
+				22066EDD207F658A00556332 /* ViewController.h */,
+				22066EDE207F658A00556332 /* ViewController.m */,
+				22066EF0207F659A00556332 /* VC2ViewController.h */,
+				22066EF1207F659A00556332 /* VC2ViewController.m */,
+				22066EF3207F66D500556332 /* UIControllerAnimator.h */,
+				22066EF4207F66D500556332 /* UIControllerAnimator.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		22953DED208225B50014EB49 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				22953DEE208225D60014EB49 /* PNVideoControlFull.h */,
+				22953DEF208225D60014EB49 /* PNVideoControlFull.m */,
+				22953DF420822C920014EB49 /* PNVideoControlDelegate.h */,
+				22953DF520822CFD0014EB49 /* PNVideoControlProtocol.h */,
+				22953DF620823B490014EB49 /* PNVideoControlTiny.h */,
+				22953DF720823B490014EB49 /* PNVideoControlTiny.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		315D0E0EA5B340CFDE8F49B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0944F1D2B494B7C20F5D6B27 /* libPods-PNPlayerKit.a */,
+				3CA0D7F58AE3B29005C68F3C /* libPods-PNPlayerKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EF699A03D0880404137EF35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53AF550ACCC4CD41D20258A3 /* Pods-PNPlayerKit.debug.xcconfig */,
+				D97B74AEA75582615B2ECE41 /* Pods-PNPlayerKit.release.xcconfig */,
+				FEF159099039D44EE2C7BFA4 /* Pods-PNPlayerKit.debug.xcconfig */,
+				92E481A3E41904B749B20926 /* Pods-PNPlayerKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22066ED6207F658A00556332 /* PNPlayerKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22066EED207F658A00556332 /* Build configuration list for PBXNativeTarget "PNPlayerKit" */;
+			buildPhases = (
+				E76AEF94E25463F9956D6B35 /* [CP] Check Pods Manifest.lock */,
+				22066ED3207F658A00556332 /* Sources */,
+				22066ED4207F658A00556332 /* Frameworks */,
+				22066ED5207F658A00556332 /* Resources */,
+				C72B515D8A77FD47331F3D47 /* [CP] Embed Pods Frameworks */,
+				241AD6FB42AE05670AC5C6C4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PNPlayerKit;
+			productName = PNPlayerKit;
+			productReference = 22066ED7207F658A00556332 /* PNPlayerKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22066ECF207F658A00556332 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Spud Hsu";
+				TargetAttributes = {
+					22066ED6207F658A00556332 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 22066ED2207F658A00556332 /* Build configuration list for PBXProject "PNPlayerKit" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22066ECE207F658A00556332;
+			productRefGroup = 22066ED8207F658A00556332 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22066ED6207F658A00556332 /* PNPlayerKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22066ED5207F658A00556332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22066EE7207F658A00556332 /* LaunchScreen.storyboard in Resources */,
+				22066EE4207F658A00556332 /* Assets.xcassets in Resources */,
+				22066EE2207F658A00556332 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		241AD6FB42AE05670AC5C6C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C72B515D8A77FD47331F3D47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PNPlayerKit/Pods-PNPlayerKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E76AEF94E25463F9956D6B35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22066ED3207F658A00556332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22066EF2207F659A00556332 /* VC2ViewController.m in Sources */,
+				22066EDF207F658A00556332 /* ViewController.m in Sources */,
+				22953DF0208225D60014EB49 /* PNVideoControlFull.m in Sources */,
+				22066EEA207F658A00556332 /* main.m in Sources */,
+				22066EDC207F658A00556332 /* AppDelegate.m in Sources */,
+				22953DEA2081B8B00014EB49 /* PNAssetManager.m in Sources */,
+				22953DE120819D720014EB49 /* PNPlayerView.m in Sources */,
+				22953DF820823B490014EB49 /* PNVideoControlTiny.m in Sources */,
+				22953DDE20819D070014EB49 /* PNPlayer.m in Sources */,
+				22066EF5207F66D500556332 /* UIControllerAnimator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		22066EE0207F658A00556332 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22066EE1207F658A00556332 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22066EE5207F658A00556332 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22066EE6207F658A00556332 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22066EEB207F658A00556332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		22066EEC207F658A00556332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22066EEE207F658A00556332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEF159099039D44EE2C7BFA4 /* Pods-PNPlayerKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PNPlayerKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipiaoniu.PNPlayerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22066EEF207F658A00556332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E481A3E41904B749B20926 /* Pods-PNPlayerKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PNPlayerKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipiaoniu.PNPlayerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22066ED2207F658A00556332 /* Build configuration list for PBXProject "PNPlayerKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22066EEB207F658A00556332 /* Debug */,
+				22066EEC207F658A00556332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22066EED207F658A00556332 /* Build configuration list for PBXNativeTarget "PNPlayerKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22066EEE207F658A00556332 /* Debug */,
+				22066EEF207F658A00556332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22066ECF207F658A00556332 /* Project object */;
+}
