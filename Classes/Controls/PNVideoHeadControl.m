@@ -8,7 +8,7 @@
 
 #import "PNVideoHeadControl.h"
 #import <Masonry/Masonry.h>
-#import <UIColor+Hex/UIColor+Hex.h>
+#import "UIColor+Hex.h"
 
 @interface PNVideoHeadControl()
 @property (nonatomic, strong) UIButton *btnClose;

@@ -7,8 +7,9 @@
 //
 
 #import "PNVideoControlTiny.h"
-#import <UIColor+Hex/UIColor+Hex.h>
 #import <Masonry/Masonry.h>
+#import "UIColor+Hex.h"
+//#import <UIColor+Hex/UIColor+Hex.h>
 
 @interface PNVideoControlTiny()
 @property (nonatomic, strong, nonnull) UIProgressView *progressView;

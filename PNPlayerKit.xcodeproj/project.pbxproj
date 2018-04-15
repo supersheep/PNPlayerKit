@@ -83,6 +83,7 @@
 		22066ECE207F658A00556332 = {
 			isa = PBXGroup;
 			children = (
+				22953DEB208225860014EB49 /* Classes */,
 				22066ED9207F658A00556332 /* PNPlayerKit */,
 				22066ED8207F658A00556332 /* Products */,
 				4EF699A03D0880404137EF35 /* Pods */,
@@ -102,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				22953DEC2082258E0014EB49 /* Demo */,
-				22953DEB208225860014EB49 /* Video */,
 				22066EE0207F658A00556332 /* Main.storyboard */,
 				22066EE3207F658A00556332 /* Assets.xcassets */,
 				22066EE5207F658A00556332 /* LaunchScreen.storyboard */,
@@ -112,7 +112,7 @@
 			path = PNPlayerKit;
 			sourceTree = "<group>";
 		};
-		22953DEB208225860014EB49 /* Video */ = {
+		22953DEB208225860014EB49 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				22953DED208225B50014EB49 /* Controls */,
@@ -126,7 +126,7 @@
 				228808D72082EB18005DAF30 /* PNVideoPlayViewController.m */,
 				228808DC20831F6E005DAF30 /* PNPlayerOrientation.h */,
 			);
-			path = Video;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		22953DEC2082258E0014EB49 /* Demo */ = {

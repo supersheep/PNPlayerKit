@@ -8,7 +8,7 @@
 
 #import "PNVideoControlFull.h"
 #import <Masonry/Masonry.h>
-#import <UIColor+Hex/UIColor+Hex.h>
+#import "UIColor+Hex.h"
 
 @interface PNVideoControlFull()
 @property (nonatomic, strong) UILabel *labCurrentTime;
