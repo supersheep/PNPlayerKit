@@ -20,6 +20,7 @@ typedef enum : NSUInteger {
 
 @class PNPlayerView;
 @protocol PNPlayerViewDelegate <NSObject>
+@optional
 - (void)playerViewCloseButtonTapped:(PNPlayerView *)player;
 - (void)playerViewPlayButtonTapped:(PNPlayerView *)player;
 - (void)playerViewTapped:(PNPlayerView *)player;
@@ -36,6 +37,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly) CMTimeScale timeScale;
 @property (nonatomic, readonly) PNPlayerStatus status;
 - (instancetype)initWithControlType:(PNPlayerControlType)type;
+- (void)setControlType:(PNPlayerControlType)type;
 - (void)setVideo:(NSString *)video poster:(NSString *)poster;
 - (void)play;
 - (void)pause;

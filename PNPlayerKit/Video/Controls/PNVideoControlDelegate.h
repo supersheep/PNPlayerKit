@@ -10,6 +10,7 @@
 #import "PNPlayerOrientation.h"
 
 @protocol PNVideoControlDelegate <NSObject>
+@optional
 -(void)videoControlTapPlay;
 -(void)videoControlTapPause;
 -(void)videoControlTapTransform;

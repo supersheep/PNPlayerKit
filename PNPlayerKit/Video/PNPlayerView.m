@@ -35,7 +35,7 @@
     if (self = [super init]) {
         _controlType = type;
         [self initViews];
-        [self initControl:type];
+        [self setControlType:type];
     }
     return self;
 }
@@ -92,9 +92,8 @@
     [self player:self.player statusDidChange:PNPlayerStatusPaused];
 }
 
-
-
-- (void)initControl:(PNPlayerControlType)type{
+- (void)setControlType:(PNPlayerControlType)type{
+    _controlType = type;
     _isShowControl = YES;
     [self.control removeFromSuperview];
     [self.head removeFromSuperview];

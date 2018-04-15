@@ -131,6 +131,18 @@
     [btn4 addTarget:self action:@selector(transform) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn4];
     
+    
+    UIButton *btn5 = [UIButton new];
+    [btn5 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    btn5.frame = CGRectMake(0, 300, 100, 50);
+    [btn5 setTitle:@"replace control" forState:UIControlStateNormal];
+    [btn5 addTarget:self action:@selector(replaceControl) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn5];
+    
+}
+
+- (void)replaceControl{
+    [self.player setControlType:PNPlayerControlTypeFull];
 }
 
 - (void)transform{
