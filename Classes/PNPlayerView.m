@@ -27,6 +27,7 @@
 @property (nonatomic, assign) BOOL isShowControl;
 @property (nonatomic, strong) PNVideoHeadControl *head;
 @property (nonatomic, assign) CGRect originFrame;
+@property (nonatomic, assign) PNPlayerControlType originType;
 @end
 
 @implementation PNPlayerView
@@ -113,7 +114,7 @@
         [self addSubview:self.control];
         [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
-            make.height.mas_equalTo(29);
+            make.height.mas_equalTo(40);
             make.bottom.equalTo(self);
         }];
     } else if (type == PNPlayerControlTypeFull) {
@@ -357,12 +358,16 @@
         [self endLoadingAnimation];
     }
     
-    if ([self.control respondsToSelector:@selector(setPlayingState:)]) {
-        [self.control setPlayingState:[self playing]];
-    }
+    [self updateControlPlayingStatus];
     
     if ([self.delegate respondsToSelector:@selector(playerView:statusDidChange:)]) {
         [self.delegate playerView:self statusDidChange:state];
+    }
+}
+
+- (void)updateControlPlayingStatus{
+    if ([self.control respondsToSelector:@selector(setPlayingState:)]) {
+        [self.control setPlayingState:[self playing]];
     }
 }
 
@@ -378,7 +383,12 @@
 }
 
 - (void)fullScreen{
+    _originType = _controlType;
+    if (_controlType == PNPlayerControlTypeSimple) {
+        [self setControlType:PNPlayerControlTypeFull];
+    }
     self.layer.zPosition = 1;
+    [self updateControlPlayingStatus];
     [UIView animateWithDuration:0.5 animations:^{
         self.originFrame = self.frame;
         self.player.orientation = PNPlayerOrientationLandscape;
@@ -388,6 +398,8 @@
 }
 
 - (void)quitFullScreen{
+    [self setControlType:_originType];
+    [self updateControlPlayingStatus];
     [UIView animateWithDuration:0.5 animations:^{
         self.player.orientation = PNPlayerOrientationPortrait;
         [self changeOrientation:PNPlayerOrientationPortrait];
