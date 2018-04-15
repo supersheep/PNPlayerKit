@@ -147,6 +147,8 @@
 - (void)playerTapped{
     if (self.controlType == PNPlayerControlTypeFull) {
         [self toggleControl];
+    } else if (self.controlType == PNPlayerControlTypeSimple) {
+        [self togglePlay];
     } else {
         if ([self.delegate respondsToSelector:@selector(playerViewTapped:)]) {
             [self.delegate playerViewTapped:self];
@@ -242,6 +244,14 @@
 }
 
 #pragma mark - public funcs
+- (void)togglePlay {
+    if ([self playing]) {
+        [self pause];
+    } else {
+        [self play];
+    }
+}
+
 - (void)play {
     [self.player play];
 }
@@ -288,26 +298,6 @@
     self.imgLoading.hidden = YES;
     [self.imgLoading.layer removeAllAnimations];
 }
-
-
-- (void)fullScreen{
-    self.layer.zPosition = 1;
-    [UIView animateWithDuration:0.5 animations:^{
-        self.originFrame = self.frame;
-        self.player.orientation = PNPlayerOrientationLandscape;
-        [self changeOrientation:PNPlayerOrientationLandscape];
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
-    }];
-}
-
-- (void)quitFullScreen{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.player.orientation = PNPlayerOrientationPortrait;
-        [self changeOrientation:PNPlayerOrientationPortrait];
-        self.frame = self.originFrame;
-    }];
-}
-
 
 - (void)changeOrientation:(PNPlayerOrientation)orientation{
     CGAffineTransform trans;
@@ -385,6 +375,24 @@
     } else {
         [self fullScreen];
     }
+}
+
+- (void)fullScreen{
+    self.layer.zPosition = 1;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.originFrame = self.frame;
+        self.player.orientation = PNPlayerOrientationLandscape;
+        [self changeOrientation:PNPlayerOrientationLandscape];
+        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    }];
+}
+
+- (void)quitFullScreen{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.player.orientation = PNPlayerOrientationPortrait;
+        [self changeOrientation:PNPlayerOrientationPortrait];
+        self.frame = self.originFrame;
+    }];
 }
 
 - (void)videoControlTapPlay{

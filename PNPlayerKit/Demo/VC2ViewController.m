@@ -29,7 +29,7 @@
 }
 
 - (void)tapped:(id)sender{
-    NSLog(@"ahaha");
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -234,16 +234,6 @@
     [_player2Layer removeFromSuperlayer];
     
 }
-//
-//- (void)addProgressObserver:(AVPlayer *)player{
-//    AVPlayerItem *playerItem = player.currentItem;
-//    //这里设置每秒执行一次
-//    [player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-//        float current = CMTimeGetSeconds(time);
-//        float total = CMTimeGetSeconds([playerItem duration]);
-//        NSLog(@"当前已经播放%.2fs.", current);
-//    }];
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
