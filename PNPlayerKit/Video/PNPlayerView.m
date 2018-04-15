@@ -129,27 +129,6 @@
     [self.imgPoster sd_setImageWithURL:[NSURL URLWithString:poster]];
 }
 
-- (void)addDisplayLink {
-    if(!self.displayLink){
-        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
-        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    }
-}
-
-- (void)stopDisplayLink {
-    [self.displayLink invalidate];
-    self.displayLink = nil;
-}
-
-- (void)handleDisplayLink {
-    if(self.player){
-        __weak __typeof__(self) weakSelf = self;
-        if ([self.delegate respondsToSelector:@selector(playerView:currentTimeChanged:)]) {
-            [self.delegate playerView:weakSelf currentTimeChanged:weakSelf.player.currentTime];
-        }
-    }
-}
-
 - (NSInteger)currentTime {
     return self.player.currentTime;
 }
@@ -174,7 +153,6 @@
 - (void)seekTo:(CMTime)time{
     [self.player seekToTime:time];
     [self.player play];
-    [self addDisplayLink];
 }
 
 - (void)startLoadingAnimation {
@@ -263,7 +241,6 @@
     }
     
     if(state == PNPlayerStatusPlaying){
-        [self addDisplayLink];
         self.player.hidden = NO;
         self.imgPoster.hidden = YES;
         self.btnPlay.hidden = YES;
@@ -272,7 +249,7 @@
     
     if(state == PNPlayerStatusCompleted || state == PNPlayerStatusPaused){
         self.player.hidden = NO;
-        self.imgPoster.hidden = YES;
+        self.imgPoster.hidden = self.player.currentTime != 0;
         if (state == PNPlayerStatusPaused && _controlType == PNPlayerControlTypeFull) {
             self.btnPlay.hidden = YES;
         } else {
@@ -284,7 +261,6 @@
             [self.btnPlay setImage:[UIImage imageNamed:@"play-circle"] forState:UIControlStateNormal];
         }
         [self endLoadingAnimation];
-        [self stopDisplayLink];
     }
     
     [self.control setPlayingState:[self playing]];
@@ -308,5 +284,6 @@
 
 - (void)videoControlMoveProgress:(CGFloat)progress{
     [self.player seekToTime:CMTimeMake(progress * self.player.totalTime, 1)];
+    [self.player play];
 }
 @end

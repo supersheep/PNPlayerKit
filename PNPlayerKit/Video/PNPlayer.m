@@ -224,7 +224,11 @@ static PNPlayer *currentPlayer = nil;
 }
 
 - (NSInteger)currentTime{
-    return CMTimeGetSeconds(self.player.currentItem.currentTime);
+    if (!self.player.currentItem || CMTimeGetSeconds(self.playerItem.currentTime) == 0) {
+        return 0;
+    } else {
+        return CMTimeGetSeconds(self.player.currentItem.currentTime);
+    }
 }
 
 - (NSInteger)loadedTime{
