@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PNPlayerKit"
-  s.version      = "1.0.2"
+  s.version      = "1.0.4"
   s.summary      = "A simple and easy to use video play toolkit."
 
   # This description is used to generate tags and improve search results.
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
+  s.platform     = :ios, "8.0"
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -134,7 +134,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency 'SDWebImage', '3.8.2'
+  s.dependency 'SDWebImage', '4.3.3'
 	s.dependency 'UIColor+Hex', '1.0.1'
   s.dependency 'Masonry', '~> 1.1.0'
 

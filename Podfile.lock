@@ -1,9 +1,9 @@
 PODS:
   - Masonry (1.1.0)
-  - Reveal-SDK (13)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - Reveal-SDK (14)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - "UIColor+Hex (1.0.1)":
     - "UIColor+Hex/NSColor (= 1.0.1)"
     - "UIColor+Hex/UIColor (= 1.0.1)"
@@ -12,7 +12,7 @@ PODS:
 DEPENDENCIES:
   - Masonry (~> 1.1.0)
   - Reveal-SDK
-  - SDWebImage (= 3.8.2)
+  - SDWebImage (= 4.3.3)
   - "UIColor+Hex (= 1.0.1)"
 
 SPEC REPOS:
@@ -24,10 +24,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
 
-PODFILE CHECKSUM: 34a6ac0e38262cf3dce4cabb7fd3a1226d88dd89
+PODFILE CHECKSUM: 3e13c1b696ba0f8d8b3fa107bd7dceb009bc0e0a
 
 COCOAPODS: 1.5.0
