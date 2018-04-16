@@ -108,7 +108,7 @@
         
         UILabel *lblCommentNum = [UILabel new];
         lblCommentNum.textAlignment = NSTextAlignmentCenter;
-        lblCommentNum.font = [UIFont systemFontOfSize:9 weight:UIFontWeightRegular];
+        lblCommentNum.font = [UIFont systemFontOfSize:9];
         lblCommentNum.textColor = [UIColor whiteColor];
         lblCommentNum.backgroundColor = [UIColor colorWithHex:0xff5636];
         lblCommentNum.layer.cornerRadius = 6;

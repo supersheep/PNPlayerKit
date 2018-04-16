@@ -42,7 +42,7 @@
     self.lblTime = [UILabel new];
     self.lblTime.textAlignment = NSTextAlignmentCenter;
     self.lblTime.textColor = [UIColor whiteColor];
-    self.lblTime.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+    self.lblTime.font = [UIFont systemFontOfSize:13];
     [self addSubview:self.lblTime];
     [self.lblTime mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-9);
