@@ -28,7 +28,7 @@
 @property (nonatomic, strong) PNVideoHeadControl *head;
 @property (nonatomic, assign) CGRect originFrame;
 @property (nonatomic, assign) PNPlayerControlType originType;
-@property (nonatomic, strong) NSMutableArray<UIView *> *items;
+@property (nonatomic, strong) NSArray<UIView *> *items;
 @end
 
 @implementation PNPlayerView
