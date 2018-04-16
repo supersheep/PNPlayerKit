@@ -179,7 +179,12 @@
 - (NSString *)getTimeString:(NSInteger)dTotalSeconds{
     int dMinutes = floor(dTotalSeconds % 3600 / 60);
     int dSeconds = floor(dTotalSeconds % 3600 % 60);
-    return [NSString stringWithFormat:@"%02i:%02i", dMinutes, dSeconds];
+    
+    if (dTotalSeconds <= 0) {
+        return @"00:00";
+    } else {
+        return [NSString stringWithFormat:@"%02i:%02i", dMinutes, dSeconds];
+    }
 }
 
 - (void)reset{
