@@ -12,6 +12,7 @@
 #import "PNPlayerView.h"
 #import "PNVideoPlayViewController.h"
 #import <Masonry/Masonry.h>
+#import "UIColor+Hex.h"
 
 @interface ViewController () <PNPlayerViewDelegate>
 @property (nonatomic, strong) AVURLAsset *asset;
@@ -79,6 +80,7 @@
     player.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width / 16.0f * 9.0f);
     [self.view addSubview:player];
 
+    
     self.player = player;
     //    [player play];
 
@@ -89,7 +91,38 @@
 //    NSString *video2 = @"https://video.piaoniu.com/review/15233560872751648.mp4";
     NSString *poster2 = @"http://img.piaoniu.com/video/a250c96b065f7e9ed8eac3bd82695f7b0d9dba0c.jpg";
 
-    PNPlayerView *player2 = [[PNPlayerView alloc] initWithControlType:PNPlayerControlTypeFull];
+    
+    
+    NSArray<UIView *> *items = ({
+        UIButton *btnShare = [UIButton new];
+        btnShare.contentMode = UIViewContentModeCenter;
+        [btnShare setImage:[UIImage imageNamed:@"video_share"] forState:UIControlStateNormal];
+        
+        UIButton *btnLike = [UIButton new];
+        btnLike.contentMode = UIViewContentModeCenter;
+        [btnLike setImage:[UIImage imageNamed:@"video_like"] forState:UIControlStateNormal];
+        
+        UIButton *btnComment = [UIButton new];
+        btnComment.contentMode = UIViewContentModeCenter;
+        [btnComment setImage:[UIImage imageNamed:@"video_comment"] forState:UIControlStateNormal];
+        
+        UILabel *lblCommentNum = [UILabel new];
+        lblCommentNum.textAlignment = NSTextAlignmentCenter;
+        lblCommentNum.font = [UIFont systemFontOfSize:9 weight:UIFontWeightRegular];
+        lblCommentNum.textColor = [UIColor whiteColor];
+        lblCommentNum.backgroundColor = [UIColor colorWithHex:0xff5636];
+        lblCommentNum.layer.cornerRadius = 6;
+        lblCommentNum.layer.masksToBounds = YES;
+        [btnComment addSubview:lblCommentNum];
+        [lblCommentNum mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(12);
+            make.right.bottom.equalTo(btnComment).offset(-8);
+        }];
+        
+        @[btnShare, btnLike, btnComment];
+    });
+    
+    PNPlayerView *player2 = [[PNPlayerView alloc] initWithControlType:PNPlayerControlTypeFull headControlItems:items];
     [player2 setVideo:video poster:poster2];
     player2.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.width / 16.0f * 9.0f, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width / 16.0f * 9.0f);
     player2.delegate = self;
@@ -250,8 +283,6 @@
     AVPlayer *player2 = [AVPlayer playerWithPlayerItem:[AVPlayerItem playerItemWithAsset:self.asset]];
     
     self.player2 = player2;
-    
-    
     
     AVPlayerLayer *playerLayer2 = [AVPlayerLayer playerLayerWithPlayer:self.player2];
     playerLayer2.frame = CGRectMake(160, 150, 160, 90);

@@ -28,18 +28,24 @@
 @property (nonatomic, strong) PNVideoHeadControl *head;
 @property (nonatomic, assign) CGRect originFrame;
 @property (nonatomic, assign) PNPlayerControlType originType;
+@property (nonatomic, strong) NSMutableArray<UIView *> *items;
 @end
 
 @implementation PNPlayerView
 
 
-- (instancetype)initWithControlType:(PNPlayerControlType)type{
+- (instancetype)initWithControlType:(PNPlayerControlType)type headControlItems:(NSArray<UIView *> *)items{
     if (self = [super init]) {
         _controlType = type;
+        _items = items;
         [self initViews];
         [self setControlType:type];
     }
     return self;
+}
+
+- (instancetype)initWithControlType:(PNPlayerControlType)type{
+    return [self initWithControlType:type headControlItems:nil];
 }
 
 - (instancetype)init{
@@ -128,6 +134,7 @@
         
         self.head = [PNVideoHeadControl new];
         self.head.delegate = self;
+        [self.head setItems:_items];
         [self addSubview:self.head];
         [self.head mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(44);
@@ -413,6 +420,11 @@
 
 - (void)videoControlTapPause{
     [self pause];
+}
+
+
+- (void)addHeadControlItem:(UIView *)item{
+    [_items addObject:item];
 }
 
 - (void)videoControlMoveProgress:(CGFloat)progress{

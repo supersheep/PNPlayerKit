@@ -14,4 +14,5 @@
 
 @interface PNVideoHeadControl : UIView
 @property (nonatomic, weak) id<PNVideoHeadControlDelegate> delegate;
+- (void)setItems:(NSArray<UIView *> *)items;
 @end

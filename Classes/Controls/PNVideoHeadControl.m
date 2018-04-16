@@ -59,6 +59,22 @@
     }
 }
 
+- (void)setItems:(NSArray<UIView *> *)items{
+    for (int i = 0; i < items.count; i++) {
+        UIView *view = items[i];
+        [self addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            if (i == 0) {
+                make.right.mas_equalTo(-5);
+            } else {
+                make.right.equalTo(items[i - 1].mas_left);
+            }
+            make.top.mas_equalTo(2);
+            make.width.height.mas_equalTo(44);
+        }];
+    }
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.gradientLayer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);

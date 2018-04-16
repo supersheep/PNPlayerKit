@@ -37,12 +37,14 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly) CMTimeScale timeScale;
 @property (nonatomic, readonly) PNPlayerStatus status;
 - (instancetype)initWithControlType:(PNPlayerControlType)type;
+- (instancetype)initWithControlType:(PNPlayerControlType)type headControlItems:(NSArray<UIView *> *)items;
 - (void)setControlType:(PNPlayerControlType)type;
 - (void)setVideo:(NSString *)video poster:(NSString *)poster;
 - (void)play;
 - (void)pause;
 - (void)seekTo:(CMTime)time;
 - (void)mute:(BOOL)shouldMute;
+
 
 - (void)toggleControl;
 - (void)showControl;
