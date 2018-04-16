@@ -45,7 +45,6 @@ typedef enum : NSUInteger {
 - (void)seekTo:(CMTime)time;
 - (void)mute:(BOOL)shouldMute;
 
-
 - (void)toggleControl;
 - (void)showControl;
 - (void)hideControl;

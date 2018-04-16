@@ -422,11 +422,6 @@
     [self pause];
 }
 
-
-- (void)addHeadControlItem:(UIView *)item{
-    [_items addObject:item];
-}
-
 - (void)videoControlMoveProgress:(CGFloat)progress{
     [self.player seekToTime:CMTimeMake(progress * self.player.totalTime, 1)];
     [self.player play];
